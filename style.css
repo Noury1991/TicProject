@@ -1,0 +1,181 @@
+
+.cell:hover {
+    background: rgb(245, 245, 245);
+}
+body {
+    min-height: 100vh;
+    /* flex-direction: row; */
+    /* font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; */
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+    /* text-align: auto; */
+    /* background: #f1c40f; */
+    background: linear-gradient(to top left, #d35400, pink);
+    
+  }
+
+  main {
+width: 100%;
+height: 100%;
+background: url("images/flow.png") no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+margin: 50px 0;
+  }
+
+.cell {
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    height: 100px;
+    width: 100px;
+
+}
+
+/* .tableContainer {
+    color: #cb99c5;
+    font-family: 'Gloria Hallelujah',
+   
+} */
+
+#gameTitle {
+    color: #cb99c5;
+}
+
+#btn {
+    width: 100%;
+    text-align: center;
+    margin: 1px 0;
+}
+
+#resetButton {
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 14px 30px;
+        font-size: 20px;
+        opacity: 0.8;
+        /* transition: 0.3s; */
+        margin-left: 500px;
+}
+
+
+ 
+#resetButton:hover {
+    background-color: #E4572E;
+    color: white;
+  }
+
+td{
+    background-color: none;
+    border: 15px solid pink;
+    height: 150px;
+    width: 150px;
+    text-align: inherit;
+    
+} 
+ 
+table {
+    margin: 5px auto;
+    border-radius: 10px;
+    display: table;
+    border-collapse: collapse;
+    background-color: rgba(255, 192, 203, 0.329);
+    color: tomato;
+    font-family: 'Gloria Hallelujah';
+ 
+}
+
+.container {
+    text-align: center;
+    margin-top: -300px;
+    display: flex;
+
+}
+
+/* .endgame {
+    width: 200px;
+    top: 120px;
+    background-color: indianred;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    text-align: center;
+    border-radius: 5px;
+    color:white;
+    font-size: 2em;
+} */
+
+/* title */
+header {
+    letter-spacing: 0.2em;
+    color: black;
+    font-size: 34px;
+    padding: 5px 2px;
+    font-weight: normal;
+    text-align:center;
+    background: url("images/flow.png") no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    /* text-align: top; */
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    background-size: cover;
+  }
+
+  header h1 {
+      /* opacity: 1 !important; */
+  }
+
+ .footer {
+    padding: 1px 2px;
+    background-color: black;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+  }
+
+#player{
+ color:white;
+ text-align: center;
+ font-size: 50px;
+ /* margin-left: 294px; */
+
+ /* display: none;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, .5);
+    z-index: 999;
+    text-align: center; */
+  }
+
+#player1{
+    color: white;
+    text-align: right;
+}
+
+#player2{
+    color: white;
+    text-align: right;
+}
+
+#popup{
+    display: none;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, .5);
+    z-index: 999;
+    text-align: center;
+}
+  /* @media only screen and (min-width: 768px) {
+    header h1 {
+      font-size: 42px;
+    }
+  } */
