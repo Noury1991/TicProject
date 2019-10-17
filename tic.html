@@ -9,51 +9,73 @@
   </head>
 
   <body>
-    <div id="popup"></div>
     <header>
       <h1>Tec Tac Toe</h1>
     </header>
 
     <main>
-      <div id="btn">
-        <button type="reset" id="resetButton">Reset</button>
+    <div class="countainer">
+
+          <!-- Div in right for X-->
+         <div class='XX' id="right">
+            <h1 id="player1"></h1>
+                <div class="one">
+                  <img height="370" src="images/yeah.gif" />
+                </div>
+         </div>
+          
+           
+              <!-- Div in center for Table -->
+      <div class='col' id="TB">
+        <div id="btn">
+                <button type="reset" onclick="reset()" id="resetButton">Reset</button>
+              </div>
+              <h1 id="player"><center>Lets play</center></h1>
+        <table>
+          <tr>
+            <td class="cell" id="r1" onclick="printx('1')"></td>
+            <td class="cell" id="r2" onclick="printx('2')"></td>
+            <td class="cell" id="r3" onclick="printx('3')"></td>
+          </tr>
+          <tr>
+            <td class="cell" id="r4" onclick="printx('4')"></td>
+            <td class="cell" id="r5" onclick="printx('5')"></td>
+            <td class="cell" id="r6" onclick="printx('6')"></td>
+          </tr>
+
+          <tr>
+            <td class="cell" id="r7" onclick="printx('7')"></td>
+            <td class="cell" id="r8" onclick="printx('8')"></td>
+            <td class="cell" id="r9" onclick="printx('9')"></td>
+          </tr>
+        </table>
+
+        <!-- Popup -->
+        <div id="popup"></div>
+
       </div>
       
-      <h1 id="player"><center>Lets play</center></h1>
 
-      <table>
-        <tr>
-          <td class="cell" id="r1" onclick="printx('1')"></td>
-          <td class="cell" id="r2" onclick="printx('2')"></td>
-          <td class="cell" id="r3" onclick="printx('3')"></td>
-        </tr>
-        <tr>
-          <td class="cell" id="r4" onclick="printx('4')"></td>
-          <td class="cell" id="r5" onclick="printx('5')"></td>
-          <td class="cell" id="r6" onclick="printx('6')"></td>
-        </tr>
 
-        <tr>
-          <td class="cell" id="r7" onclick="printx('7')"></td>
-          <td class="cell" id="r8" onclick="printx('8')"></td>
-          <td class="cell" id="r9" onclick="printx('9')"></td>
-        </tr>
-      </table>
+      <!-- Div in Left for O && Tie-->
+      <div class='OO' id="left">
+            <h1 id="player2"></h1>
 
-      
-      <h1 id="player1"><right></right></h1>
-      <h1 id="player2"><left></left></h1>
+        <div class="tow"> 
+          <img height="370" src="images/win3.gif" />
+        </div>
+        <div class="three">
+          <img height="300" src="images/tie.gif" />
+        </div>
+      </div>
 
     </main>
-    <div class="footer">
-            <p>@copy write by Noura albukhaite</p>
-          </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+
+</div>
+    <div class="footer">
+      <p>@copy write by Noura albukhaite</p>
+    </div>
 
     <script src="tic.js"></script>
   </body>

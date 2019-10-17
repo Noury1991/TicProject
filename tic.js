@@ -1,28 +1,40 @@
-let rstBtn = document.querySelector("#resetButton");
 // Reset button
-const reset = function() {
+const reset = function reset() {
   window.alert();
   for (let i = 1; i <= 9; i++) {
     document.getElementById("r" + i).innerHTML = "";
   }
+  count1 = 0;
+  count2 = 0;
   p1.innerHTML = "";
   p2.innerHTML = "";
   sign = "X";
   disp.innerHTML = "<center>" + sign + " 's Turn " + "</center>";
 };
 
-rstBtn.addEventListener("click", reset);
+// popup
+const popup = function() {
+  pop.style.display = "none";
+};
+
+// replay the game
+const replay = function() {
+  document.querySelector(".one").style.display = "none";
+  document.querySelector(".tow").style.display = "none";
+  document.querySelector(".three").style.display = "none";
+};
 
 // Elemenets
-var audio = new Audio('ss.m4a');
+var xAudio = new Audio("saound/snd3.wav");
+var oAudio = new Audio("saound/snd1.wav");
+var TieAudio = new Audio("saound/snd2.ogg");
 let sign = "X";
 let disp = document.getElementById("player");
 let p1 = document.getElementById("player1");
 let p2 = document.getElementById("player2");
 let count1 = 0;
 let count2 = 0;
-let t = document.getElementsById("cell");
-// let pop = document.getElementById("popup");
+let pop = document.getElementById("popup");
 
 // to know wich box'r clicked
 function printx(number) {
@@ -51,8 +63,7 @@ function getbox(num) {
 
 // Check who Win (O OR X)
 function checkMove(a, b, c, d) {
-  if (getbox(a) == d && getbox(b) == d && getbox(c) == d) 
-  return true;
+  if (getbox(a) == d && getbox(b) == d && getbox(c) == d) return true;
   else return false;
 }
 
@@ -69,13 +80,20 @@ function winner() {
     getbox(8) != "" &&
     getbox(9) != ""
   ) {
-    disp.innerHTML = "<center> Tie !! play agin </center>";
+    TieAudio.play();
+    pop.innerHTML =
+      "<center> Tie !! </center>" + "\n" + " <center> play again </center>";
+    pop.style.display = "block";
+    setTimeout(popup, 3000);
+
+    document.querySelector(".three").style.display = "block";
+    setTimeout(replay, 3000);
 
     for (let i = 1; i <= 9; i++) {
       document.getElementById("r" + i).innerHTML = "";
     }
     // return;
-    throw " Tie ";
+    // throw " Tie ";
   } else {
     if (
       checkMove(1, 2, 3, "X") ||
@@ -87,24 +105,19 @@ function winner() {
       checkMove(1, 5, 9, "X") ||
       checkMove(7, 5, 3, "X")
     ) {
-    //   audio.pause();
+      //   audio.pause();
 
-    audio.play()
+      xAudio.play();
       disp.innerHTML = "<center>" + sign + " 's Winner" + "</center>";
-      
-      
-    //   t.style.background-color = "red";
-      // alert(" X are Win");
-    //   disp.style.display = "inline-block";
+      document.querySelector(".one").style.display = "block";
+      setTimeout(replay, 4000);
 
       count1++;
       for (let i = 1; i <= 9; i++) {
         p1.innerHTML = "<center> player X win " + count1 + " Time's </center>";
         document.getElementById("r" + i).innerHTML = "";
       }
-      
-    //   throw "Game end";
-      // return;
+      //   throw "";
     }
 
     if (
@@ -117,8 +130,10 @@ function winner() {
       checkMove(1, 5, 9, "O") ||
       checkMove(7, 5, 3, "O")
     ) {
-        
+      oAudio.play();
       disp.innerHTML = "<center>" + sign + " 's Winner" + "</center>";
+      document.querySelector(".tow").style.display = "block";
+      setTimeout(replay, 5000);
       // alert(" X are Win");
 
       count2++;
@@ -126,9 +141,9 @@ function winner() {
         p2.innerHTML = "<center> player O win " + count2 + " Time's </center>";
         document.getElementById("r" + i).innerHTML = "";
       }
-      audio.play()
-    //   throw "Game end";
+      //   throw "Game end";
       // return;
     }
+    // document.querySelector('.one').style.display='none';
   }
 }
